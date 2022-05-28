@@ -1,5 +1,5 @@
 export default {
-    name: 'Product',
+    name: 'product',
     title: 'Product',
     type: 'document',
     fields: [
@@ -18,8 +18,8 @@ export default {
             type: 'string',
         },
         {
-            name: 'description',
-            title: 'Description',
+            name: 'slug',
+            title: 'slug',
             type: 'slug',
             options: {
                 source:'name',
