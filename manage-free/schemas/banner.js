@@ -37,23 +37,13 @@ export default {
             type: 'string',
         },
         {
-            name: 'largeText1',
-            title: 'LargeText1',
+            name: 'price',
+            title: 'Pricing',
             type: 'string',
         },
         {
-            name: 'largeText2',
-            title: 'LargeText2',
-            type: 'string',
-        },
-        {
-            name: 'discount',
-            title: 'Discount',
-            type: 'string',
-        },
-        {
-            name: 'saleTime',
-            title: 'SaleTime',
+            name: 'Terms',
+            title: 'Type of STorage',
             type: 'string',
         },
     ],
