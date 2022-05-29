@@ -5,6 +5,27 @@ import { client, urlFor } from '../../lib/client';
 import { Product } from '../../components';
 import { useStateContext } from '../../context/StateContext';
 
+async function requestAccount(){
+  if (window.ethereum){
+    console.log("detected");
+    try {
+      const accounts = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      setWalletAddress(accounts[0]);
+    } catch (error) {
+      console.log('Error connecting...');
+    }
+  }
+}
+async function connectWallet() {
+  if(typeof window.ethereum !== 'undefined') {
+    await requestAccount();
+
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+  }
+}
+
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price } = product;
   const [index, setIndex] = useState(0);
@@ -62,7 +83,7 @@ const ProductDetails = ({ product, products }) => {
           </div>
           <div className="buttons">
             <button type="button" className="add-to-cart" onClick={() => onAdd(product, qty)}>Pay Now (Using Cart)</button>
-            <button type="button" className="buy-now" onClick={handleBuyNow}>Pay using Crypto Wallet</button>
+            <button type="button" className="buy-now" onClick={requestAccount}>Pay using Crypto Wallet</button>
           </div>
         </div>
       </div>
