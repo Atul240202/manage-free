@@ -40,21 +40,21 @@ const Cart = () => {
         className="cart-heading"
         onClick={() => setShowCart(false)}>
           <AiOutlineLeft />
-          <span className="heading">Your Cart</span>
+          <span className="heading">My Subscriptions</span>
           <span className="cart-num-items">({totalQuantities} items)</span>
         </button>
 
         {cartItems.length < 1 && (
           <div className="empty-cart">
             <AiOutlineShopping size={150} />
-            <h3>Your shopping bag is empty</h3>
+            <h3>You haven't subscribed any service</h3>
             <Link href="/">
               <button
                 type="button"
                 onClick={() => setShowCart(false)}
                 className="btn"
               >
-                Continue Shopping
+                Search for perfect option first
               </button>
             </Link>
           </div>
@@ -99,7 +99,7 @@ const Cart = () => {
             </div>
             <div className="btn-container">
               <button type="button" className="btn" onClick={handleCheckout}>
-                Pay with Stripe
+                Pay Now
               </button>
             </div>
           </div>

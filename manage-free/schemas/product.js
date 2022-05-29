@@ -27,7 +27,7 @@ export default {
             }
         },
         {
-            name: 'Price',
+            name: 'price',
             title: 'Price',
             type: 'number',
 
